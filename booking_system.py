@@ -9,11 +9,17 @@ import json
 import os
 import re
 from datetime import datetime, date
+from reset_json import reset
 
 
 DATE_FORMAT = "%Y-%m-%d"  # "YYYY-MM-DD"
 FILENAME = "bookings.json"
 ROOMS = ["room1", "room2", "room3"]
+
+if not os.path.exists(FILENAME):
+    print(f"Mangler {FILENAME}")
+    print(f"Setter opp fil...")
+    reset()
 
 
 class Booking:
@@ -92,8 +98,6 @@ def write_booking_to_json(booking: dict, room: str) -> None:
     -> Completed
     """
 
-    if not os.path.exists(FILENAME):
-        print("Missing 'bookings.json'")
     try:
         with open(FILENAME, "r+") as file:
             bookings = json.load(file)

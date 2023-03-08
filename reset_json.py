@@ -1,7 +1,8 @@
 # Made for debugging purposes
 import booking_system
 
-def reset():
+def reset() -> None:
+    """Writes new JSON file"""
     n_rooms = len(booking_system.ROOMS)
     with open(booking_system.FILENAME, "w") as f:
         for i, room in enumerate(booking_system.ROOMS, 1):
