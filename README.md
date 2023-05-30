@@ -3,6 +3,6 @@
 Kjør fra main
 
 
-## Todo:
+## Todo - Python:
 - Kommenter kode
 - legg til søke funksjon
